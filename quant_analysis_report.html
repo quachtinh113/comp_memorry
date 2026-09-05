@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Quantitative Finance Toolkit - Integrated Report</title>
+<style>
+  @page {
+    size: A4;
+    margin: 18mm 16mm 18mm 16mm;
+    @bottom-right {
+      content: counter(page);
+      font-size: 9pt;
+      color: #718096;
+    }
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #1a202c;
+    line-height: 1.6;
+    font-size: 10pt;
+  }
+  h1 {
+    font-size: 20pt;
+    color: #0f172a;
+    border-bottom: 2px solid #2563eb;
+    padding-bottom: 8px;
+    margin-top: 0;
+  }
+  h2 {
+    font-size: 14pt;
+    color: #1e3a8a;
+    border-bottom: 1px solid #cbd5e1;
+    padding-bottom: 4px;
+    margin-top: 22px;
+    page-break-after: avoid;
+  }
+  h3 {
+    font-size: 11.5pt;
+    color: #1e40af;
+    margin-top: 14px;
+    margin-bottom: 4px;
+    page-break-after: avoid;
+  }
+  h4 {
+    font-size: 10.5pt;
+    color: #334155;
+    margin-top: 10px;
+    margin-bottom: 2px;
+  }
+  p, ul, ol {
+    margin-top: 4px;
+    margin-bottom: 8px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0;
+    font-size: 9pt;
+    page-break-inside: avoid;
+  }
+  th, td {
+    border: 1px solid #cbd5e1;
+    padding: 6px 8px;
+    text-align: left;
+  }
+  th {
+    background-color: #f1f5f9;
+    color: #0f172a;
+    font-weight: 600;
+  }
+  tr:nth-child(even) {
+    background-color: #f8fafc;
+  }
+  code {
+    background: #f1f5f9;
+    color: #b91c1c;
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 8.5pt;
+  }
+  pre {
+    background: #0f172a;
+    color: #f8fafc;
+    padding: 10px;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 8.5pt;
+    line-height: 1.4;
+    page-break-inside: avoid;
+  }
+  pre code {
+    background: transparent;
+    color: inherit;
+    padding: 0;
+  }
+  blockquote {
+    border-left: 4px solid #3b82f6;
+    margin: 8px 0;
+    padding: 6px 12px;
+    background-color: #eff6ff;
+    color: #1e3a8a;
+    font-size: 9pt;
+  }
+  .math {
+    font-family: "Cambria Math", "Times New Roman", serif;
+    font-style: italic;
+  }
+  .tag {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 8pt;
+    font-weight: bold;
+    margin-right: 4px;
+  }
+  .tag-alpha { background: #dbeafe; color: #1e40af; }
+  .tag-ml { background: #dcfce7; color: #166534; }
+  .tag-vbt { background: #fef3c7; color: #92400e; }
+  .tag-lean { background: #f3e8ff; color: #6b21a8; }
+</style>
+</head>
+<body>
+
+<h1>BÁO CÁO NGHIÊN CỨU ĐỊNH LƯỢNG & TỔNG HỢP 4 REPOSITORIES</h1>
+<p><strong>Dự án:</strong> Lean, awesome-quant, qlib, vectorbt &bull; <strong>Tập trung:</strong> Khối Alpha & Hệ thống Machine Learning &bull; <strong>Ngày phát hành:</strong> 2026-09-06</p>
+
+<hr style="border: 0; height: 1px; background: #e2e8f0; margin-bottom: 16px;">
+
+<h2>1. Giới thiệu & Định vị 4 Repositories</h2>
+<p>Hệ thống 4 thư mục trong kho lưu trữ đại diện cho 4 mắt xích cốt lõi của một Quỹ Đầu tư Định lượng (Quant Fund) đẳng cấp tổ chức:</p>
+<table>
+  <tr>
+    <th style="width:18%;">Repository</th>
+    <th style="width:22%;">Bản chất Kỹ thuật</th>
+    <th style="width:60%;">Thế mạnh cốt lõi & Vị thế trong Pipeline</th>
+  </tr>
+  <tr>
+    <td><strong>Lean</strong> (QuantConnect)</td>
+    <td>C# Engine / Python API / Event-Driven</td>
+    <td><strong>Cỗ máy thực thi Production & Quản trị rủi ro đa tài sản.</strong> Kiến trúc Event-Driven cực kỳ nghiêm ngặt, tích hợp sẵn API hàng chục Broker (Interactive Brokers, Binance, OANDA), mô phỏng trượt giá, phí, chia cổ tức chính xác tuyệt đối.</td>
+  </tr>
+  <tr>
+    <td><strong>awesome-quant</strong></td>
+    <td>Kho học thuật & Tài nguyên tri thức</td>
+    <td><strong>Bản đồ lý thuyết & Tài liệu tham khảo toàn diện.</strong> Cung cấp bài báo học thuật từ các giáo sư tài chính định lượng hàng đầu (Fama-French, Marcos López de Prado, Gu & Xiu), danh bạ datasets và các gói công cụ quant.</td>
+  </tr>
+  <tr>
+    <td><strong>qlib</strong> (Microsoft AI)</td>
+    <td>Python AI Platform / Data-centric</td>
+    <td><strong>Khối nghiên cứu AI & Alpha Factory quy mô lớn.</strong> Được thiết kế chuyên biệt cho Machine Learning trong tài chính: pipeline dữ liệu tick/phút nén nhị phân siêu tốc, kho nhân tố <em>Alpha101, Alpha158</em>, và các mô hình LightGBM, Transformer, GNN tích hợp sẵn.</td>
+  </tr>
+  <tr>
+    <td><strong>vectorbt</strong></td>
+    <td>NumPy / Numba JIT / Rust Backend</td>
+    <td><strong>Công cụ mô phỏng vector hóa siêu tốc.</strong> Đạt tốc độ triệu nến/giây nhờ giải phóng Python GIL. Cho phép khai phá không gian siêu tham số (Hyperparameter optimization) và vẽ heatmap hiệu suất tương tác cực kỳ trực quan.</td>
+  </tr>
+</table>
+
+<h2>2. Khối Lý thuyết Học thuật Chuyên sâu: Alpha & Machine Learning</h2>
+
+<h3>2.1. Khối Alpha Engineering (Khám phá Nhân tố Sinh lời)</h3>
+<p>Một nhân tố Alpha <em>f<sub>t</sub>(&tau;)</em> là ánh xạ từ không gian thông tin lịch sử &fnof;<sub>t</sub> đến lợi nhuận kỳ vọng tương lai <em>R<sub>t+&tau;</sub></em>:</p>
+<p style="text-align:center; font-size:11pt;"><code>f<sub>t</sub>: &fnof;<sub>t</sub> &rarr; &real;<sup>N</sup></code> (N là số lượng mã cổ phiếu trong Universe)</p>
+
+<h4>Quy trình Chuẩn hóa Nhân tố (Alpha Normalization Pipeline)</h4>
+<ol>
+  <li><strong>Làm sạch ngoại lai (Winsorization bằng Median Absolute Deviation - MAD):</strong>
+    <p>Thay vì dùng Mean và Std (dễ bị bóp méo bởi cú sốc thị trường), ta tính:</p>
+    <p><code>Median = median(X), &nbsp; MAD = median(|X - Median|)</code></p>
+    <p>Mọi giá trị ngoài khoảng <code>[Median - 3 &times; 1.4826 &times; MAD, Median + 3 &times; 1.4826 &times; MAD]</code> được co về hai ngưỡng biên.</p>
+  </li>
+  <li><strong>Trung hòa rủi ro ngành và quy mô (Neutralization):</strong>
+    <p>Sử dụng hồi quy OLS bóc tách triệt để ảnh hưởng của Market Cap và biến giả ngành (Industry Dummies):</p>
+    <p><code>f<sub>i</sub> = &beta;<sub>0</sub> + &beta;<sub>m</sub> ln(Cap<sub>i</sub>) + &sum; &gamma;<sub>k</sub> Industry<sub>i,k</sub> + &epsilon;<sub>i</sub></code></p>
+    <p>Phần dư <code>&epsilon;<sub>i</sub></code> chính là <strong>Pure Alpha</strong> (nhân tố thuần khiết không bị rủi ro vĩ mô chi phối).</p>
+  </li>
+  <li><strong>Z-Score Cross-Sectional:</strong> <code>z<sub>i</sub> = (&epsilon;<sub>i</sub> - &mu;<sub>&epsilon;</sub>) / &sigma;<sub>&epsilon;</sub></code> chuẩn hóa toàn bộ cổ phiếu về phân phối chuẩn tại từng thanh nến thời gian <em>t</em>.</li>
+</ol>
+
+<h4>Bộ Chỉ số Thẩm định Alpha (Validation Metrics)</h4>
+<ul>
+  <li><strong>Information Coefficient (IC):</strong> Hệ số tương quan Pearson giữa giá trị alpha và tỷ suất sinh lời tương lai: <code>IC<sub>t</sub> = corr(f<sub>t</sub>, R<sub>t+1</sub>)</code>.</li>
+  <li><strong>Rank IC:</strong> Hệ số tương quan hạng Spearman: <code>Rank IC<sub>t</sub> = 1 - (6 &sum; d<sub>i</sub><sup>2</sup>) / [N(N<sup>2</sup> - 1)]</code>. Đo lường tính đơn điệu bất kể phân phối phi tuyến.</li>
+  <li><strong>Information Ratio (IR):</strong> <code>IR = Mean(IC) / Std(IC) &times; &radic;252</code>. Tiêu chuẩn tổ chức: IR &gt; 1.5 chứng minh alpha có tính ổn định cao qua nhiều chu kỳ kinh tế.</li>
+</ul>
+
+<h3>2.2. Khối Hệ thống Học máy Tài chính (Financial ML Architecture)</h3>
+<p>Áp dụng Machine Learning vào tài chính gặp 3 cạm bẫy chết người: <em>Overfitting</em>, <em>Look-ahead bias</em>, và <em>Non-stationary distribution</em>. Hệ thống chuẩn mực kế thừa từ <code>qlib</code> và nghiên cứu của Marcos López de Prado giải quyết như sau:</p>
+
+<h4>1. Ngăn chặn Rò rỉ Thông tin (Purged & Embargoed Cross-Validation)</h4>
+<p>Không bao giờ được chia K-Fold ngẫu nhiên. Phải dùng thời gian tuần tự và áp dụng:</p>
+<ul>
+  <li><strong>Purging:</strong> Loại bỏ các mẫu nhãn có khoảng thời gian nắm giữ giao thoa giữa tập Train và tập Test.</li>
+  <li><strong>Embargoing:</strong> Đặt khoảng thời gian "cách ly" sau tập Test để triệt tiêu tính tự tương quan (autocorrelation) của chuỗi tài chính.</li>
+</ul>
+
+<h4>2. Kỹ thuật Gán Nhãn Đột phá (Triple-Barrier Labeling Method)</h4>
+<p>Thay vì dự báo giá đóng cửa cố định <em>t+k</em>, Triple-Barrier đặt ra 3 rào cản động dựa theo độ biến động thực tế (ATR/Volatility):</p>
+<ul>
+  <li><strong>Rào trên (Take-Profit Barrier):</strong> Chạm trước &rarr; Nhãn <code>+1</code>.</li>
+  <li><strong>Rào dưới (Stop-Loss Barrier):</strong> Chạm trước &rarr; Nhãn <code>-1</code>.</li>
+  <li><strong>Rào thời gian (Vertical Barrier):</strong> Hết thời gian mà chưa chạm rào nào &rarr; Nhãn <code>0</code> (hoặc tính theo return thực tế).</li>
+</ul>
+
+<h4>3. Các Kiến trúc Mô hình Tiên tiến</h4>
+<ul>
+  <li><strong>Tree-based Models (LightGBM, CatBoost):</strong> Sử dụng hàm mục tiêu tối ưu hóa thứ hạng <code>LambdaMART</code> kết hợp tính toán <strong>SHAP Values</strong> nhằm bóc tách độ quan trọng phi tuyến của từng Alpha.</li>
+  <li><strong>Deep Temporal Networks (LSTM, GRU, Temporal Convolutional Networks - TCN):</strong> Khai thác chuỗi thời gian nhiều bước nến để nhận diện hình thái tích lũy/phân phối.</li>
+  <li><strong>Transformer / Informer Models:</strong> Cơ chế Self-Attention tự động kích hoạt trọng số lớn vào các thời điểm thị trường xảy ra biến động mạnh hoặc xuất hiện đột biến thanh khoản.</li>
+</ul>
+
+<hr style="border: 0; height: 1px; background: #e2e8f0; margin: 20px 0;">
+
+<h2>3. BỐN KỸ NĂNG CỐT LÕI CẦN THÀNH THỤC (4 CORE SKILLS)</h2>
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; margin-bottom: 14px;">
+  <h3><span class="tag tag-alpha">SKILL 1</span> Nghiên cứu Định lượng & Khai phá Alpha (Alpha Factor Engineering)</h3>
+  <p><strong>Nguồn lực:</strong> <code>qlib (Alpha101, Alpha158)</code>, <code>awesome-quant</code>.</p>
+  <p><strong>Năng lực cần đạt:</strong></p>
+  <ul>
+    <li>Thành thạo công thức biểu diễn chuỗi thời gian: <code>Ts_Rank</code>, <code>Ts_Correlation</code>, <code>Decay_Linear</code>, <code>Delta</code>.</li>
+    <li>Thiết lập pipeline làm sạch: MAD Winsorization, OLS Neutralization theo ngành và vốn hóa, Z-Score Cross-sectional.</li>
+    <li>Đánh giá độ đơn điệu phân vị (Quantile 1 &rarr; Quantile 5 Monotonicity) và kiểm tra Information Ratio (IR &gt; 1.5).</li>
+  </ul>
+</div>
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; margin-bottom: 14px;">
+  <h3><span class="tag tag-ml">SKILL 2</span> Thiết kế Hệ thống Học máy Tài chính (Financial Machine Learning Systems)</h3>
+  <p><strong>Nguồn lực:</strong> <code>qlib Model Zoo</code>, <code>Scikit-Learn</code>, <code>LightGBM</code>, <code>PyTorch</code>.</p>
+  <p><strong>Năng lực cần đạt:</strong></p>
+  <ul>
+    <li>Xây dựng cấu trúc dữ liệu Point-in-Time (PIT) triệt tiêu hoàn toàn Survivorship Bias và Look-ahead Bias.</li>
+    <li>Thực hiện phân chia tập dữ liệu bằng Purged & Embargoed Cross-Validation.</li>
+    <li>Triển khai Triple-Barrier Labeling kết hợp kỹ thuật Meta-Labeling (mô hình 1 tạo tín hiệu vào lệnh, mô hình 2 xác định kích thước vị thế bet sizing).</li>
+  </ul>
+</div>
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; margin-bottom: 14px;">
+  <h3><span class="tag tag-vbt">SKILL 3</span> Mô phỏng Vector hóa Siêu Tốc Độ (Vectorized Backtesting & Optimization)</h3>
+  <p><strong>Nguồn lực:</strong> <code>vectorbt</code>, <code>Numba JIT</code>, <code>Rust Kernels</code>.</p>
+  <p><strong>Năng lực cần đạt:</strong></p>
+  <ul>
+    <li>Biên dịch các chỉ báo và chiến lược phức tạp thành mã máy C/LLVM qua <code>@njit(nogil=True)</code>.</li>
+    <li>Mô hình hóa chi phí vi cấu trúc: trượt giá Almgren-Chriss, phí vay mượn vị thế Short, phí sàn bậc thang.</li>
+    <li>Tính toán các chỉ số quản trị rủi ro cao cấp: Deflated Sharpe Ratio (DSR), Conditional VaR (Expected Shortfall 99%), Maximum Drawdown Duration.</li>
+  </ul>
+</div>
+
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; margin-bottom: 14px;">
+  <h3><span class="tag tag-lean">SKILL 4</span> Kiến trúc Thực thi Production & Quản trị Danh mục (Production Execution & Live Trading)</h3>
+  <p><strong>Nguồn lực:</strong> <code>QuantConnect Lean Framework</code> (C# / Python).</p>
+  <p><strong>Năng lực cần đạt:</strong></p>
+  <ul>
+    <li>Làm chủ kiến trúc 5 tầng chuẩn công nghiệp: <em>Universe Selection &rarr; Alpha Creation &rarr; Portfolio Construction &rarr; Execution &rarr; Risk Management</em>.</li>
+    <li>Tối ưu hóa khớp lệnh tổ chức bằng thuật toán TWAP, VWAP để giảm thiểu Market Impact.</li>
+    <li>Đóng gói toàn bộ hệ thống bằng Docker container, kết nối API Broker thời gian thực với cơ chế tự động ngắt mạch (Circuit Breakers).</li>
+  </ul>
+</div>
+
+<h2>4. Quy trình Thực chiến Hợp nhất (Unified Pipeline)</h2>
+<pre><code>[ Dữ liệu thô Tick/Phút ] 
+          &darr; (qlib DataHandler: Chuẩn hóa PIT, nén nhị phân)
+[ Ma trận Factor sạch: Alpha101 / Alpha158 ]
+          &darr; (Triple-Barrier Labeling + Purged CV)
+[ ML Ensemble: LightGBM / Transformer / GNN ]
+          &darr; (Dự báo Xác suất & Trọng số Alpha)
+[ vectorbt Engine (Numba/Rust): Tối ưu tham số, lọc rủi ro DSR ]
+          &darr; (Chiến lược vượt qua bài test ma trận)
+[ LEAN Algorithm Framework (C#/Docker): Live Brokerage Execution ]
+</code></pre>
+
+<h2>5. Danh mục Tài liệu Tham khảo Học thuật</h2>
+<ul>
+  <li><strong>Gu, S., Kelly, B., & Xiu, D. (2020).</strong> <em>Empirical Asset Pricing via Machine Learning.</em> The Review of Financial Studies, 33(5), 2223-2273.</li>
+  <li><strong>López de Prado, M. (2018).</strong> <em>Advances in Financial Machine Learning.</em> John Wiley & Sons.</li>
+  <li><strong>Kakushadze, Z. (2016).</strong> <em>101 Formulaic Alphas.</em> Wilmott Magazine, 2016(84), 72-81.</li>
+  <li><strong>Almgren, R., & Chriss, N. (2000).</strong> <em>Optimal execution of portfolio transactions.</em> Journal of Risk, 3, 5-40.</li>
+  <li><strong>QuantConnect Lean Engine Docs:</strong> <a href="https://www.quantconnect.com/docs/v2">https://www.quantconnect.com/docs/v2</a></li>
+  <li><strong>Microsoft Qlib Documentation:</strong> <a href="https://qlib.readthedocs.io/">https://qlib.readthedocs.io/</a></li>
+</ul>
+
+</body>
+</html>
